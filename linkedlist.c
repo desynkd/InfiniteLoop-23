@@ -73,12 +73,10 @@ void FreeList(Node *head)
     Node *current, *front;
 
     current = head;
-    while(current->next != NULL)
+    while(current != NULL)
     {
         front = current->next;
         free(current);
         current = front;
     }
-    free(current);
-    free(front);
 }
